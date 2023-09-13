@@ -43,8 +43,23 @@ class Playlist {
        this.duration.push(duration); 
     }
     
+    totalDuration()
+    {
+        let durationSum = 0;
+        for(let duration of this.duration) {
+            durationSum += duration;
+        }
+        return durationSum;
+    }
+
+    averageDuration() {
+        return this.totalDuration() / this.videos.length; 
+    }
 }   
 let myPlaylist = new Playlist();
-myPlaylist.addVideo("Fight Club", "2 hr 19 min");
+myPlaylist.addVideo("Fight Club", 2);
+myPlaylist.addVideo("Cat in the Hat", 1);
 console.log(myPlaylist);
+console.log(myPlaylist.totalDuration());
 
+console.log(myPlaylist.averageDuration());
