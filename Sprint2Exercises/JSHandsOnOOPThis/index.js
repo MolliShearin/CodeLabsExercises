@@ -50,3 +50,38 @@ console.log(myCat2);
 
 //Practical OOP Scenerios
 //Exercises 3.1 and 3.2
+//Implement inheritance by creating a subclass "ElectricCar" derived from the "Car" class, adding properties like batteryLife.
+//For the "ElectricCar" class, override the displayInfo method to also include battery life information.
+class ElectricCar extends Car {
+    constructor(make, model, year,batteryLife)
+    {
+        super(make, model, year);
+        this.batteryLife = batteryLife;
+    }
+    displayInfo() {
+        return (`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}, Battery Life: ${this.batteryLife}`);
+    }
+    
+}
+
+let car2 = new ElectricCar("Toyota", "Corolla", 2023, "250 miles");
+console.log(car2.displayInfo());
+
+//Exercise 4.1 
+//Design a class "Student". Create an instance method that uses "this" to access the student's properties. Observe how "this" behaves within the class context.
+class Student {
+    constructor(name, age, grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    displayStudentInfo() {
+        return (`${this.name} is ${this.age} and is in the ${this.grade} grade.`);
+    }
+}
+
+let student1 = new Student("Henry", 10, "5th");
+console.log(student1);
+console.log(student1.age)
+console.log(student1.displayStudentInfo());
