@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+        ">
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!--OPTION 1-->
+    <div class="jumbotron text-center"><button class="btn btn-danger" onclick="goCoocoo()">Go CooCoo</button></div>
+
+    <!--OPTION 2: use events directly on the element in javascript-->
+    <div class="jumbotron text-center"><button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get
+            Coffee</button>
+        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
+        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
+        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
+
+    </div>
+
+
+    <script>
+        //grab elements from the dom
+        //attach event listeners
+
+        //const body = document.querySelector('body');
+        //body.style.backgroundColor = "#C00C00";
+
+        function goCoocoo() {
+            document.body.style.backgroundColor = "#C00C00";
+        }
+
+        //option 2 ========================
+        const coffeeButton = document.querySelectorAll(".coffee-btn");
+        //coffeeButton.onclick = function () {
+        //    document.body.style.backgroundColor = "#C0FFEE";
+        //}
+
+            function getCoffee() {
+                document.body.style.backgroundColor = "#C0FFEE";
+            }
+
+        coffeeButton.forEach(function(button) {
+            button.onclick = getCoffee;
+        })
+
+        //coffeeButton.onmouseenter = goCoocoo;
+    </script>
+</body>
+
+</html>
