@@ -23,13 +23,18 @@
     <!--OPTION 2: use events directly on the element in javascript-->
     <div class="jumbotron text-center"><button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get
             Coffee</button>
-        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
-        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
-        <button class="btn btn-danger coffee-btn" onclick="goCoocoo()">Get Coffee</button>
-
+        <button class="btn btn-danger coffee-btn">Get Coffee</button>
+        <button class="btn btn-danger coffee-btn">Get Coffee</button>
+        <button class="btn btn-danger coffee-btn">Get Coffee</button>
     </div>
 
+    <!--OPTION 3 ======================================-->
+        <div class="jumbotron text-center">
+            <button class="btn btn-primary lala-btn">Not Listening</button>
+            </div>
 
+
+<!--Start Javascript==============================-->
     <script>
         //grab elements from the dom
         //attach event listeners
@@ -56,6 +61,19 @@
         })
 
         //coffeeButton.onmouseenter = goCoocoo;
+
+        //OPTION 3===============================
+        const lalaButton = document.querySelector(".lala-btn");
+
+        function notListening() {
+            document.body.style.backgroundColor = "#1A1A1A";
+        }
+
+        lalaButton.addEventListener("click", notListening);
+        lalaButton.addEventListener("mouseenter", goCoocoo);
+
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(button => button.addEventListener("mouseleave", notListening));
     </script>
 </body>
 
