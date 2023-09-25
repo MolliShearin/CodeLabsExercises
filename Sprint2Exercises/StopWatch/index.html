@@ -51,14 +51,12 @@
 
         function startTimer() {
             if(isRunning) return;
-
             isRunning = true;
             interval = setInterval(incrementTimer, 1000);
         }
 
         function stopTimer() {
             if(!isRunning) return;
-
             isRunning = false;
             clearInterval(interval);
         }
