@@ -1,0 +1,6 @@
+.warning {
+  color: darkred;
+  background-color: coral;
+  border: 3px solid darkred;
+  padding: 20px;
+}
